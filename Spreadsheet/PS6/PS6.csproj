@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D96FBF7F-9B09-4C3A-9F76-20A637E942CE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PS6</RootNamespace>
+    <AssemblyName>PS6</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DependancyGraph\DependancyGraph.csproj">
+      <Project>{f6c4d279-b672-4cec-b4d0-a8ddcd702781}</Project>
+      <Name>DependancyGraph</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Evaluator\Evaluator.csproj">
+      <Project>{b158e42a-48de-43ed-b5de-b896cc4a3d81}</Project>
+      <Name>Evaluator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FormulaClassTest\FormulaClassTest.csproj">
+      <Project>{3c9a2aa3-430f-4b71-93d3-4aa7d2d53d23}</Project>
+      <Name>FormulaClassTest</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FormulaConsole\FormulaConsole.csproj">
+      <Project>{8173400b-6feb-47e6-aed6-632d3543ba2e}</Project>
+      <Name>FormulaConsole</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FormulaEvaluatorTest\FormulaEvaluatorTest.csproj">
+      <Project>{4bb7940f-ed6e-4326-987d-3a4d8e94e3ec}</Project>
+      <Name>FormulaEvaluatorTest</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Formula\Formula.csproj">
+      <Project>{a95c8fe4-2b8b-4c2b-9052-ea92d455c948}</Project>
+      <Name>Formula</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Spreedsheet\Spreadsheet.csproj">
+      <Project>{6bae037f-49a1-4d12-bebf-5d5e8fa01ddc}</Project>
+      <Name>Spreadsheet</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
